@@ -5,7 +5,7 @@ type CounterDisplayProps = {
 }
 
 type IncrementButtonProps = {
-    event: () => void;
+    onIncrement: () => void;
 }
 
 function CounterDisplay({ count }: CounterDisplayProps) {
@@ -13,9 +13,9 @@ function CounterDisplay({ count }: CounterDisplayProps) {
 }
 
 
-function IncrementButton({ event }: IncrementButtonProps) {
+function IncrementButton({ onIncrement }: IncrementButtonProps) {
     return (
-        <button onClick={event}>
+        <button onClick={onIncrement}>
             Increment
         </button>
     );
@@ -36,8 +36,8 @@ export default function RenderingLab() {
             <Header />
 
             <CounterDisplay count={count} />
-            <br></br>
-            <IncrementButton event={incrCount} />
+            <br />
+            <IncrementButton onIncrement={incrCount} />
         </main>
     );
 }
